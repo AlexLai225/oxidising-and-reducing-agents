@@ -22,6 +22,7 @@ import { AgentRole, GameMode, GamePhase, GameState, Language } from './types/che
 import { sound } from './utils/sound';
 
 const BEST_SCORE_KEY = 'hkdse_redox_best_score_v1';
+const LANG_STORAGE_KEY = 'hkdse_redox_lang_v1';
 
 function getInitialBestScore(): number {
   try {
@@ -32,8 +33,26 @@ function getInitialBestScore(): number {
   }
 }
 
+function getInitialLanguage(): Language {
+  try {
+    if (typeof window !== 'undefined') {
+      const param = new URLSearchParams(window.location.search).get('lang');
+      if (param === 'en' || param === 'zh') {
+        return param;
+      }
+    }
+    const saved = localStorage.getItem(LANG_STORAGE_KEY);
+    if (saved === 'en' || saved === 'zh') {
+      return saved;
+    }
+  } catch {
+    // Ignore storage errors
+  }
+  return 'zh';
+}
+
 export default function App() {
-  const [lang, setLang] = useState<Language>('zh');
+  const [lang, setLang] = useState<Language>(getInitialLanguage);
   const [selectedMode, setSelectedMode] = useState<GameMode>('sprint');
   const [muted, setMuted] = useState(false);
   const [showReference, setShowReference] = useState(false);
@@ -65,6 +84,16 @@ export default function App() {
       }
     }
   }, [gameState.score, bestScore]);
+
+  // Persist selected language and sync document lang
+  useEffect(() => {
+    document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
+    try {
+      localStorage.setItem(LANG_STORAGE_KEY, lang);
+    } catch {
+      // Ignore storage errors
+    }
+  }, [lang]);
 
   const handleStart = useCallback(
     (modeToUse: GameMode = selectedMode) => {

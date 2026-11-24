@@ -28,10 +28,23 @@ test('HKDSE dataset contains both OA and RA cards with zero table or past paper 
   const serialized = JSON.stringify(HKDSE_REAGENTS);
   assert.equal(/30\.5|30\.6|30\.7|pastPaper|DSE 20|CE 20/i.test(serialized), false);
 
+  const hasCJK = (text: string) => /[\u4e00-\u9fff]/.test(text);
   for (const card of HKDSE_REAGENTS) {
     assert.ok(card.halfEquation.length > 0);
     assert.ok(card.observation.zh.length > 0);
     assert.ok(card.observation.en.length > 0);
+    assert.equal(hasCJK(card.formula), false, `CJK found in formula of ${card.id}`);
+    assert.equal(hasCJK(card.speciesChange), false, `CJK found in speciesChange of ${card.id}`);
+    assert.equal(hasCJK(card.halfEquation), false, `CJK found in halfEquation of ${card.id}`);
+    assert.equal(hasCJK(card.name.en), false, `CJK found in name.en of ${card.id}`);
+    assert.equal(hasCJK(card.category.en), false, `CJK found in category.en of ${card.id}`);
+    assert.equal(hasCJK(card.clue.en), false, `CJK found in clue.en of ${card.id}`);
+    assert.equal(hasCJK(card.beforeLabel.en), false, `CJK found in beforeLabel.en of ${card.id}`);
+    assert.equal(hasCJK(card.afterLabel.en), false, `CJK found in afterLabel.en of ${card.id}`);
+    assert.equal(hasCJK(card.observation.en), false, `CJK found in observation.en of ${card.id}`);
+    assert.equal(hasCJK(card.oxidationChange.en), false, `CJK found in oxidationChange.en of ${card.id}`);
+    assert.equal(hasCJK(card.explanation.en), false, `CJK found in explanation.en of ${card.id}`);
+    assert.equal(hasCJK(card.examTip?.en ?? ''), false, `CJK found in examTip.en of ${card.id}`);
   }
 });
 

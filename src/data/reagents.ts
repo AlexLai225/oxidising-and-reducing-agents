@@ -239,7 +239,7 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
     afterColor: '#F8FAFC',
     afterColorBorder: '#CBD5E1',
     afterLabel: { zh: 'OH⁻(aq) / O²⁻(s)', en: 'OH⁻(aq) / O²⁻(s)' },
-    speciesChange: 'O₂(g) → OH⁻(aq) 或 O²⁻(s)',
+    speciesChange: 'O₂(g) → OH⁻(aq) / O²⁻(s)',
     observation: {
       zh: '無色氧氣被還原成無色的氫氧離子 OH⁻(aq) 或金屬氧化物中的 O²⁻(s)。',
       en: 'Colourless O₂(g) is reduced to colourless OH⁻(aq) or oxide ions O²⁻(s).',
@@ -686,12 +686,12 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
     afterColor: '#F1F5F9',
     afterColorBorder: '#94A3B8',
     afterLabel: { zh: '無色 CO(g) / CO₂(g)', en: 'Colourless CO / CO₂(g)' },
-    speciesChange: 'C(s) → CO(g) 或 CO₂(g)',
+    speciesChange: 'C(s) → CO(g) / CO₂(g)',
     observation: {
       zh: '黑色固體消耗，生成無色氣體一氧化碳 CO(g) 或二氧化碳 CO₂(g)。',
       en: 'Black solid is consumed to give colourless CO(g) or CO₂(g).',
     },
-    halfEquation: 'C(s) + 2O²⁻ → CO₂(g) + 4e⁻ (乾態反應)',
+    halfEquation: 'C(s) + 2O²⁻ → CO₂(g) + 4e⁻',
     oxidationChange: {
       zh: 'C 的氧化數由 0 增加至 +2 (CO) 或 +4 (CO₂)',
       en: 'Oxidation number of C increases from 0 to +2 (CO) or +4 (CO₂)',
@@ -711,7 +711,7 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
       zh: '碘化物溶液',
       en: 'Iodide Solution',
     },
-    formula: 'I⁻(aq) (如 KI)',
+    formula: 'I⁻(aq)',
     category: {
       zh: '鹵化物還原劑',
       en: 'Halide Reducing Agent',
