@@ -424,8 +424,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
   {
     id: 'sodium-metal',
     name: {
-      zh: '鈉（電化序較高的金屬）',
-      en: 'Sodium (Metal Higher in E.C.S.)',
+      zh: '鈉',
+      en: 'Sodium',
     },
     formula: 'Na(s)',
     category: {
@@ -433,8 +433,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
       en: 'Reactive Metal Reducing Agent',
     },
     clue: {
-      zh: '質軟的銀灰色第 I 族金屬，須貯存於石蠟油中；極易失去最外層電子。',
-      en: 'Soft grey Group I metal stored under paraffin oil; loses electrons very readily.',
+      zh: '質軟的銀灰色第 I 族金屬，須貯存於石蠟油中。',
+      en: 'Soft silvery-grey Group I metal stored under paraffin oil.',
     },
     role: 'RA',
     bannerBg: '#5A6B7C',
@@ -466,8 +466,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
   {
     id: 'potassium-metal',
     name: {
-      zh: '鉀（電化序最強還原劑）',
-      en: 'Potassium (Strongest RA in E.C.S.)',
+      zh: '鉀',
+      en: 'Potassium',
     },
     formula: 'K(s)',
     category: {
@@ -475,8 +475,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
       en: 'Strongest Reducing Agent',
     },
     clue: {
-      zh: '原子序 19 的活潑鹼金屬；位於 HKDSE 電化序最頂端。',
-      en: 'Atomic no. 19 alkali metal; sits at the very top of the electrochemical series.',
+      zh: '原子序 19 的第 I 族鹼金屬，質軟，須貯存於石蠟油中。',
+      en: 'Atomic no. 19 Group I alkali metal; soft solid stored under paraffin oil.',
     },
     role: 'RA',
     bannerBg: '#64748B',

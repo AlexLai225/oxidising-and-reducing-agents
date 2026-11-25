@@ -46,6 +46,17 @@ test('HKDSE dataset contains both OA and RA cards with zero table or past paper 
     assert.equal(hasCJK(card.explanation.en), false, `CJK found in explanation.en of ${card.id}`);
     assert.equal(hasCJK(card.examTip?.en ?? ''), false, `CJK found in examTip.en of ${card.id}`);
   }
+
+  for (const id of ['sodium-metal', 'potassium-metal']) {
+    const card = HKDSE_REAGENTS.find((r) => r.id === id);
+    assert.ok(card, `Expected ${id} in HKDSE_REAGENTS`);
+    const questionText = `${card.name.zh} ${card.name.en} ${card.clue.zh} ${card.clue.en}`;
+    assert.equal(
+      /Strongest RA|最強還原劑|E\.C\.S\.|電化序|electrochemical series/i.test(questionText),
+      false,
+      `Question card ${id} should not expose E.C.S. or strongest RA description`
+    );
+  }
 });
 
 test('createDeck produces balanced 10-card deck in sprint mode and all cards in full mode', () => {
