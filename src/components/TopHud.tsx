@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Heart, Infinity as InfinityIcon, Pause, Volume2, VolumeX } from 'lucide-react';
+import { ArrowLeft, BookOpen, Heart, Infinity as InfinityIcon, Pause, Volume2, VolumeX } from 'lucide-react';
 import { GameMode, Language } from '../types/chemistry';
 
 interface TopHudProps {
@@ -39,22 +39,33 @@ export const TopHud: React.FC<TopHudProps> = ({
 }) => {
   return (
     <header className="w-full bg-white border-b border-slate-200/80 px-2.5 sm:px-6 h-14 flex items-center justify-between gap-1.5 sm:gap-3 shrink-0 z-30">
-      {/* Left Brand + HKDSE Tag (Matches Reference) */}
+      {/* Top-Left Back to Home + Brand */}
       <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+        <a
+          href="https://alexlai225.github.io/chemistryalexlai/"
+          aria-label={lang === 'zh' ? '返回主頁 (Back to Home)' : 'Back to Home'}
+          className="inline-flex items-center gap-1 px-2 sm:px-2.5 min-h-[36px] rounded-lg border border-slate-200/90 bg-slate-50/80 hover:bg-slate-100 hover:border-slate-300 active:scale-[0.98] text-[11px] sm:text-xs font-bold text-slate-700 hover:text-slate-900 whitespace-nowrap shrink-0 transition-all"
+        >
+          <ArrowLeft className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+          <span>Back to Home</span>
+        </a>
+
+        <div className="hidden sm:block h-5 w-px bg-slate-200 shrink-0" aria-hidden="true" />
+
         <div
-          className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-50 border border-amber-300 flex items-center justify-center shrink-0 shadow-[0_1px_0_rgba(217,119,6,0.2)]"
+          className="hidden sm:flex w-8 h-8 rounded-lg bg-amber-50 border border-amber-300 items-center justify-center shrink-0 shadow-[0_1px_0_rgba(217,119,6,0.2)]"
           aria-hidden="true"
         >
-          <span className="font-extrabold text-xs sm:text-sm text-amber-700 tracking-tight">Ox</span>
+          <span className="font-extrabold text-sm text-amber-700 tracking-tight">Ox</span>
         </div>
         <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
-          <h1 className="font-extrabold text-[14px] sm:text-base text-slate-900 tracking-tight whitespace-nowrap">
-            <span className="sm:hidden">{lang === 'zh' ? '氧化×還原' : 'Redox Agents'}</span>
+          <h1 className="font-extrabold text-[13px] sm:text-base text-slate-900 tracking-tight whitespace-nowrap truncate">
+            <span className="sm:hidden">{lang === 'zh' ? '氧化×還原' : 'Redox'}</span>
             <span className="hidden sm:inline">
               {lang === 'zh' ? '氧化劑 × 還原劑' : 'Oxidizing × Reducing'}
             </span>
           </h1>
-          <span className="px-1.5 py-0.5 rounded bg-[#E11D48] text-white text-[9px] sm:text-[10px] font-extrabold tracking-wider shrink-0">
+          <span className="hidden sm:inline-flex px-1.5 py-0.5 rounded bg-[#E11D48] text-white text-[10px] font-extrabold tracking-wider shrink-0">
             HKDSE
           </span>
         </div>
@@ -121,7 +132,7 @@ export const TopHud: React.FC<TopHudProps> = ({
           type="button"
           onClick={onToggleLang}
           aria-label={lang === 'zh' ? 'Switch to English' : '切換至繁體中文'}
-          className="min-w-[36px] sm:min-w-[40px] min-h-[44px] px-1.5 sm:px-2 rounded-lg text-xs font-extrabold text-slate-700 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center whitespace-nowrap"
+          className="min-w-[32px] sm:min-w-[40px] min-h-[44px] px-1 sm:px-2 rounded-lg text-xs font-extrabold text-slate-700 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center whitespace-nowrap"
         >
           {lang === 'zh' ? 'EN' : '繁'}
         </button>
@@ -131,7 +142,7 @@ export const TopHud: React.FC<TopHudProps> = ({
           type="button"
           onClick={onOpenReference}
           aria-label={lang === 'zh' ? '開啟常見試劑速查表' : 'Open HKDSE Reagent Reference'}
-          className="w-9 sm:w-10 min-h-[44px] rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center"
+          className="w-8 sm:w-10 min-h-[44px] rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center"
         >
           <BookOpen className="w-[17px] h-[17px] sm:w-[18px] sm:h-[18px]" />
         </button>
@@ -149,7 +160,7 @@ export const TopHud: React.FC<TopHudProps> = ({
                 ? '靜音'
                 : 'Mute sound'
           }
-          className="w-9 sm:w-10 min-h-[44px] rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center"
+          className="w-8 sm:w-10 min-h-[44px] rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center"
         >
           {muted ? (
             <VolumeX className="w-[17px] h-[17px] sm:w-[18px] sm:h-[18px]" />
@@ -164,7 +175,7 @@ export const TopHud: React.FC<TopHudProps> = ({
             type="button"
             onClick={onPause}
             aria-label={lang === 'zh' ? '暫停遊戲' : 'Pause game'}
-            className="w-9 sm:w-10 min-h-[44px] rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center"
+            className="w-8 sm:w-10 min-h-[44px] rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors flex items-center justify-center"
           >
             <Pause className="w-[17px] h-[17px] sm:w-[18px] sm:h-[18px]" />
           </button>
