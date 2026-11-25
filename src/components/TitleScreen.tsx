@@ -93,8 +93,18 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
             <div className="px-3 py-2.5 rounded-xl bg-orange-50/80 border border-orange-200/80 flex items-center gap-2">
               <ArrowLeft className="w-4 h-4 text-[#EA580C] shrink-0" aria-hidden="true" />
               <div className="min-w-0">
-                <p className="text-xs font-extrabold text-[#EA580C] truncate">
-                  {lang === 'zh' ? '左滑：氧化劑' : 'Left: Oxidizing'}
+                <p className="text-[11px] sm:text-xs font-extrabold text-[#EA580C] leading-tight">
+                  {lang === 'zh' ? (
+                    <>
+                      <span className="block">左滑</span>
+                      <span className="block whitespace-nowrap">氧化劑</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="block">Left:</span>
+                      <span className="block whitespace-nowrap">Oxidizing Agent</span>
+                    </>
+                  )}
                 </p>
                 <p className="text-[11px] text-orange-800/80 truncate">
                   {lang === 'zh' ? '獲得電子 · 本身被還原' : 'Gains e⁻ · Reduced'}
@@ -104,8 +114,18 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
 
             <div className="px-3 py-2.5 rounded-xl bg-sky-50/80 border border-sky-200/80 flex items-center justify-end gap-2 text-right">
               <div className="min-w-0">
-                <p className="text-xs font-extrabold text-[#0284C7] truncate">
-                  {lang === 'zh' ? '右滑：還原劑' : 'Right: Reducing'}
+                <p className="text-[11px] sm:text-xs font-extrabold text-[#0284C7] leading-tight">
+                  {lang === 'zh' ? (
+                    <>
+                      <span className="block">右滑</span>
+                      <span className="block whitespace-nowrap">還原劑</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="block">Right:</span>
+                      <span className="block whitespace-nowrap">Reducing Agent</span>
+                    </>
+                  )}
                 </p>
                 <p className="text-[11px] text-sky-800/80 truncate">
                   {lang === 'zh' ? '失去電子 · 本身被氧化' : 'Loses e⁻ · Oxidized'}
