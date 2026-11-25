@@ -250,8 +250,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
       en: 'Oxidation number of O decreases from 0 to −2',
     },
     explanation: {
-      zh: '氧分子獲得電子還原成 −2 價的氧（OH⁻ 或 O²⁻），是工業及自然界中最重要的氧化劑。',
-      en: 'O₂ gains electrons to form −2 oxidation state species (OH⁻ or O²⁻).',
+      zh: 'O₂ 獲得電子生成 OH⁻ 或 O²⁻，O 的氧化數由 0 變為 -2。',
+      en: 'O₂ gains electrons to form OH⁻ or O²⁻, the oxidation number of O changes from 0 to -2.',
     },
     examTip: {
       zh: '氧（存在於空氣中）是價格最便宜的氧化劑。寫半方程式時切勿漏寫 OH⁻ 的負電荷（不是 OH 分子）！',
@@ -341,8 +341,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
   {
     id: 'silver-ion',
     name: {
-      zh: '銀離子（電化序較低金屬離子）',
-      en: 'Silver Ion (Lower in E.C.S.)',
+      zh: '銀離子',
+      en: 'Silver Ion',
     },
     formula: 'Ag⁺(aq)',
     category: {
@@ -350,8 +350,8 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
       en: 'Metal Ion Oxidizing Agent',
     },
     clue: {
-      zh: '無色溶液（如硝酸銀溶液）；其金屬位於電化序極低位置。',
-      en: 'Colourless ion solution (e.g. AgNO₃); metal sits low in E.C.S.',
+      zh: '無色溶液（如硝酸銀溶液 AgNO₃(aq)）。',
+      en: 'Colourless aqueous solution (e.g. AgNO₃(aq)).',
     },
     role: 'OA',
     bannerBg: '#64748B',
@@ -545,7 +545,7 @@ export const HKDSE_REAGENTS: ReagentCard[] = [
     },
     examTip: {
       zh: 'SO₂ 與酸化 KMnO₄ 或酸化 K₂Cr₂O₇ 反應時作還原劑；但與 H₂S 反應生成 S 時卻作氧化劑。',
-      en: 'SO₂ acts as an RA with acidified KMnO₄/K₂Cr₂O₇, though it acts as an OA with H₂S.',
+      en: 'SO₂ acts as a reducing agent with acidified KMnO₄/K₂Cr₂O₇, though it acts as an oxidizing agent with H₂S.',
     },
   },
   {

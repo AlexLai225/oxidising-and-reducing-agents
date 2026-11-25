@@ -94,7 +94,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
               <ArrowLeft className="w-4 h-4 text-[#EA580C] shrink-0" aria-hidden="true" />
               <div className="min-w-0">
                 <p className="text-xs font-extrabold text-[#EA580C] truncate">
-                  {lang === 'zh' ? '左滑：氧化劑 OA' : 'Left: Oxidizing OA'}
+                  {lang === 'zh' ? '左滑：氧化劑' : 'Left: Oxidizing'}
                 </p>
                 <p className="text-[11px] text-orange-800/80 truncate">
                   {lang === 'zh' ? '獲得電子 · 本身被還原' : 'Gains e⁻ · Reduced'}
@@ -105,7 +105,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
             <div className="px-3 py-2.5 rounded-xl bg-sky-50/80 border border-sky-200/80 flex items-center justify-end gap-2 text-right">
               <div className="min-w-0">
                 <p className="text-xs font-extrabold text-[#0284C7] truncate">
-                  {lang === 'zh' ? '右滑：還原劑 RA' : 'Right: Reducing RA'}
+                  {lang === 'zh' ? '右滑：還原劑' : 'Right: Reducing'}
                 </p>
                 <p className="text-[11px] text-sky-800/80 truncate">
                   {lang === 'zh' ? '失去電子 · 本身被氧化' : 'Loses e⁻ · Oxidized'}

@@ -49,7 +49,7 @@ export const TopHud: React.FC<TopHudProps> = ({
         </div>
         <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
           <h1 className="font-extrabold text-[14px] sm:text-base text-slate-900 tracking-tight whitespace-nowrap">
-            <span className="sm:hidden">{lang === 'zh' ? '氧化×還原' : 'OA × RA'}</span>
+            <span className="sm:hidden">{lang === 'zh' ? '氧化×還原' : 'Redox Agents'}</span>
             <span className="hidden sm:inline">
               {lang === 'zh' ? '氧化劑 × 還原劑' : 'Oxidizing × Reducing'}
             </span>

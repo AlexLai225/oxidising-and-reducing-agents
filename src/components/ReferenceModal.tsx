@@ -46,8 +46,8 @@ export const ReferenceModal: React.FC<ReferenceModalProps> = ({ lang, onClose })
           {(
             [
               { id: 'ALL', zh: `全部 (${HKDSE_REAGENTS.length})`, en: `All (${HKDSE_REAGENTS.length})` },
-              { id: 'OA', zh: '氧化劑 (OA)', en: 'Oxidizing (OA)' },
-              { id: 'RA', zh: '還原劑 (RA)', en: 'Reducing (RA)' },
+              { id: 'OA', zh: '氧化劑', en: 'Oxidizing Agent' },
+              { id: 'RA', zh: '還原劑', en: 'Reducing Agent' },
             ] as const
           ).map((tab) => {
             const active = filter === tab.id;
@@ -92,7 +92,7 @@ export const ReferenceModal: React.FC<ReferenceModalProps> = ({ lang, onClose })
                       isOA ? 'text-[#EA580C]' : 'text-[#0284C7]'
                     }`}
                   >
-                    {isOA ? (lang === 'zh' ? '氧化劑 OA' : 'OA') : lang === 'zh' ? '還原劑 RA' : 'RA'}
+                    {isOA ? (lang === 'zh' ? '氧化劑' : 'Oxidizing Agent') : lang === 'zh' ? '還原劑' : 'Reducing Agent'}
                   </span>
                 </div>
                 <div className="px-3 py-1.5 rounded-lg bg-slate-100 font-mono-chem text-[11px] sm:text-xs font-bold text-slate-800 overflow-x-auto">

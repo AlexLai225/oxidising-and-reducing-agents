@@ -114,11 +114,11 @@ export const EndScreen: React.FC<EndScreenProps> = ({
                         >
                           {isOA
                             ? lang === 'zh'
-                              ? '氧化劑 OA'
-                              : 'OA'
+                              ? '氧化劑'
+                              : 'Oxidizing Agent'
                             : lang === 'zh'
-                              ? '還原劑 RA'
-                              : 'RA'}
+                              ? '還原劑'
+                              : 'Reducing Agent'}
                         </span>
                       </div>
                       <p className="text-xs text-slate-600">{m.card.observation[lang]}</p>

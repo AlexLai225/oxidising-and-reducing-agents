@@ -47,7 +47,7 @@ test('HKDSE dataset contains both OA and RA cards with zero table or past paper 
     assert.equal(hasCJK(card.examTip?.en ?? ''), false, `CJK found in examTip.en of ${card.id}`);
   }
 
-  for (const id of ['sodium-metal', 'potassium-metal']) {
+  for (const id of ['sodium-metal', 'potassium-metal', 'silver-ion']) {
     const card = HKDSE_REAGENTS.find((r) => r.id === id);
     assert.ok(card, `Expected ${id} in HKDSE_REAGENTS`);
     const questionText = `${card.name.zh} ${card.name.en} ${card.clue.zh} ${card.clue.en}`;
@@ -56,6 +56,37 @@ test('HKDSE dataset contains both OA and RA cards with zero table or past paper 
       false,
       `Question card ${id} should not expose E.C.S. or strongest RA description`
     );
+  }
+
+  const oxygen = HKDSE_REAGENTS.find((r) => r.id === 'oxygen');
+  assert.ok(oxygen, 'Expected oxygen in HKDSE_REAGENTS');
+  assert.equal(
+    oxygen.explanation.en,
+    'O₂ gains electrons to form OH⁻ or O²⁻, the oxidation number of O changes from 0 to -2.'
+  );
+  assert.equal(
+    oxygen.explanation.zh,
+    'O₂ 獲得電子生成 OH⁻ 或 O²⁻，O 的氧化數由 0 變為 -2。'
+  );
+
+  for (const card of HKDSE_REAGENTS) {
+    const visibleTexts = [
+      card.name.zh,
+      card.name.en,
+      card.category.zh,
+      card.category.en,
+      card.clue.zh,
+      card.clue.en,
+      card.observation.zh,
+      card.observation.en,
+      card.oxidationChange.zh,
+      card.oxidationChange.en,
+      card.explanation.zh,
+      card.explanation.en,
+      card.examTip?.zh ?? '',
+      card.examTip?.en ?? '',
+    ].join(' ');
+    assert.equal(/\b(OA|RA)\b/.test(visibleTexts), false, `Found OA/RA short form in ${card.id}`);
   }
 });
 

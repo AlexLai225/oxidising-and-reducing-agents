@@ -133,7 +133,7 @@ export const SwipeCard: React.FC<SwipeCardProps> = ({
               style={{ opacity: Math.min(1, dragRatio * 1.2) }}
               className="absolute top-4 right-4 px-3 py-1.5 rounded-xl border-[3px] border-[#F97316] bg-white/95 text-[#EA580C] font-extrabold text-sm tracking-wide shadow-md rotate-[8deg]"
             >
-              ← {lang === 'zh' ? '氧化劑 OA' : 'OXIDIZING (OA)'}
+              ← {lang === 'zh' ? '氧化劑' : 'OXIDIZING AGENT'}
             </div>
           )}
 
@@ -143,7 +143,7 @@ export const SwipeCard: React.FC<SwipeCardProps> = ({
               style={{ opacity: Math.min(1, dragRatio * 1.2) }}
               className="absolute top-4 left-4 px-3 py-1.5 rounded-xl border-[3px] border-[#0EA5E9] bg-white/95 text-[#0284C7] font-extrabold text-sm tracking-wide shadow-md rotate-[-8deg]"
             >
-              {lang === 'zh' ? '還原劑 RA' : 'REDUCING (RA)'} →
+              {lang === 'zh' ? '還原劑' : 'REDUCING AGENT'} →
             </div>
           )}
         </div>
@@ -179,7 +179,7 @@ export const SwipeCard: React.FC<SwipeCardProps> = ({
             <p className="text-[11px] font-medium text-slate-400 text-center">
               {lang === 'zh'
                 ? '輕掃向左：氧化劑 · 向右：還原劑 · 或點擊下方按鈕'
-                : 'Swipe left for OA · Swipe right for RA · Or tap below'}
+                : 'Swipe left: Oxidizing · Swipe right: Reducing · Or tap below'}
             </p>
           </div>
         </div>

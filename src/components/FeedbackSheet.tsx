@@ -195,11 +195,11 @@ export const FeedbackSheet: React.FC<FeedbackSheetProps> = ({
               <span className={isOA ? 'text-[#EA580C]' : 'text-[#0284C7]'}>
                 {isOA
                   ? lang === 'zh'
-                    ? '常見氧化劑 (OA)'
-                    : 'Oxidizing Agent (OA)'
+                    ? '常見氧化劑'
+                    : 'Oxidizing Agent'
                   : lang === 'zh'
-                    ? '常見還原劑 (RA)'
-                    : 'Reducing Agent (RA)'}
+                    ? '常見還原劑'
+                    : 'Reducing Agent'}
               </span>
             </p>
           </div>

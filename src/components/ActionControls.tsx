@@ -20,7 +20,7 @@ export const ActionControls: React.FC<ActionControlsProps> = ({
         type="button"
         disabled={disabled}
         onClick={() => onSelect('OA')}
-        aria-label={lang === 'zh' ? '向左選擇：氧化劑 OA' : 'Choose Oxidizing Agent (OA)'}
+        aria-label={lang === 'zh' ? '向左選擇：氧化劑' : 'Choose Oxidizing Agent'}
         className="group flex flex-col items-center gap-2 focus-visible:outline-none disabled:opacity-50"
       >
         <span className="w-[70px] h-[70px] sm:w-[74px] sm:h-[74px] rounded-full bg-white border-[3.5px] border-[#F97316] shadow-[0_6px_16px_rgba(249,115,22,0.16)] flex items-center justify-center transition-transform duration-150 group-hover:scale-105 group-active:scale-95 group-focus-visible:ring-4 group-focus-visible:ring-orange-200">
@@ -40,7 +40,7 @@ export const ActionControls: React.FC<ActionControlsProps> = ({
         </span>
         <span className="flex items-center gap-1 text-[15px] font-extrabold text-[#EA580C] whitespace-nowrap">
           <ArrowLeft className="w-3.5 h-3.5 stroke-[2.75]" aria-hidden="true" />
-          <span>{lang === 'zh' ? '氧化劑 OA' : 'Oxidizing OA'}</span>
+          <span>{lang === 'zh' ? '氧化劑' : 'Oxidizing Agent'}</span>
         </span>
       </button>
 
@@ -49,7 +49,7 @@ export const ActionControls: React.FC<ActionControlsProps> = ({
         type="button"
         disabled={disabled}
         onClick={() => onSelect('RA')}
-        aria-label={lang === 'zh' ? '向右選擇：還原劑 RA' : 'Choose Reducing Agent (RA)'}
+        aria-label={lang === 'zh' ? '向右選擇：還原劑' : 'Choose Reducing Agent'}
         className="group flex flex-col items-center gap-2 focus-visible:outline-none disabled:opacity-50"
       >
         <span className="w-[70px] h-[70px] sm:w-[74px] sm:h-[74px] rounded-full bg-white border-[3.5px] border-[#0EA5E9] shadow-[0_6px_16px_rgba(14,165,233,0.16)] flex items-center justify-center transition-transform duration-150 group-hover:scale-105 group-active:scale-95 group-focus-visible:ring-4 group-focus-visible:ring-sky-200">
@@ -67,7 +67,7 @@ export const ActionControls: React.FC<ActionControlsProps> = ({
           </svg>
         </span>
         <span className="flex items-center gap-1 text-[15px] font-extrabold text-[#0284C7] whitespace-nowrap">
-          <span>{lang === 'zh' ? '還原劑 RA' : 'Reducing RA'}</span>
+          <span>{lang === 'zh' ? '還原劑' : 'Reducing Agent'}</span>
           <ArrowRight className="w-3.5 h-3.5 stroke-[2.75]" aria-hidden="true" />
         </span>
       </button>
